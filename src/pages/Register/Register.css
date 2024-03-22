@@ -1,9 +1,13 @@
 .registerDessign {
-    height: 88vh;
+    height: 92vh;
     width: 100vw;
 
     background-color: lightcyan;
     
+   
     display: flex;
+    justify-content: center;
+    align-items: center;
+
 
 }
