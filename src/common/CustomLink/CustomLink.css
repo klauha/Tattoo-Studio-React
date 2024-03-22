@@ -1,0 +1,11 @@
+.linkDessign {
+    font-weight: bold;
+    color: lightcyan;
+    margin: 1em;
+    transition: 0,5s;
+}
+.linkDessign:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+}
