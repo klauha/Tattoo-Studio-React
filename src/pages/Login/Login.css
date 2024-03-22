@@ -1,0 +1,9 @@
+.loginDessign {
+    height: 88vh;
+    width: 100vw;
+
+    background-color: rgb(169, 92, 92);
+    
+    display: flex;
+
+}

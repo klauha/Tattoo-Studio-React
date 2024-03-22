@@ -1,0 +1,9 @@
+.registerDessign {
+    height: 88vh;
+    width: 100vw;
+
+    background-color: lightcyan;
+    
+    display: flex;
+
+}
