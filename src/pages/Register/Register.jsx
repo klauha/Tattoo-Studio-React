@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Input } from '../../common/Input/input'
 // import { Button } from '../../common/Button/Button'
 import './Register.css'
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
     // const [email, setEmail] = useState("")
@@ -14,6 +15,7 @@ export const Register = () => {
         }
     )
 
+    const navigate = useNavigate();
 
     const registerMe = async() => {
         // console.log(email);
@@ -35,6 +37,10 @@ export const Register = () => {
         )
 
         const userRegistered = await response.json()
+
+        if(userRegistered.success) {
+            navigate('/login')
+        }
     }
 
     const inputHandler = (e) => {
