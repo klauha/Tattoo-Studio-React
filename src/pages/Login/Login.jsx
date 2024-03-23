@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Input } from '../../common/Input/input'
 import "./Login.css"
+import { login } from '../../services/apiCalls'
 
 export const Login = () => {
 
@@ -13,17 +14,8 @@ export const Login = () => {
   )
 
   const LogMe = async() => {
-    const response = await fetch(
-      'http://localhost:4000/api/auth/login',
-      {
-        method: "Post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bodyCredentials),
-      }
-   )
-   const loggedUser = await response.json
+    const result = await login(bodyCredentials)
+    console.log(result);
   }
 
 const inputHandler = (e) => {
