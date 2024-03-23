@@ -3,6 +3,7 @@ import { Input } from '../../common/Input/input'
 // import { Button } from '../../common/Button/Button'
 import './Register.css'
 import { useNavigate } from "react-router-dom";
+import { register } from '../../services/apiCalls';
 
 export const Register = () => {
     // const [email, setEmail] = useState("")
@@ -22,22 +23,10 @@ export const Register = () => {
         // console.log(password);
         console.log(bodyCredentials.password);
         console.log(bodyCredentials.email);
-
         console.log(bodyCredentials);
 
-        const response = await fetch(
-            'http://localhost:4000/api/auth/register',
-            {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(bodyCredentials),
-            }    
-        )
-
-        const userRegistered = await response.json()
-
+        const userRegistered = await register(bodyCredentials)
+        console.log(userRegistered);
         if(userRegistered.success) {
             navigate('/login')
         }
