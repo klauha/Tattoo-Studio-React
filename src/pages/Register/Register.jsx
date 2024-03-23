@@ -15,13 +15,26 @@ export const Register = () => {
     )
 
 
-    const registerMe = () => {
+    const registerMe = async() => {
         // console.log(email);
         // console.log(password);
         console.log(bodyCredentials.password);
         console.log(bodyCredentials.email);
 
         console.log(bodyCredentials);
+
+        const response = await fetch(
+            'http://localhost:4000/api/auth/register',
+            {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(bodyCredentials),
+            }    
+        )
+
+        const userRegistered = await response.json()
     }
 
     const inputHandler = (e) => {
