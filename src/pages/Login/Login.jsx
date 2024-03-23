@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Input } from '../../common/Input/input'
 import "./Login.css"
 import { login } from '../../services/apiCalls'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
 
@@ -13,9 +14,14 @@ export const Login = () => {
     }
   )
 
+  const navigate = useNavigate()
   const LogMe = async() => {
     const result = await login(bodyCredentials)
     console.log(result);
+    if(result.success) {
+      localStorage.setItem("token",result.token )
+      navigate("/home")
+    }
   }
 
 const inputHandler = (e) => {

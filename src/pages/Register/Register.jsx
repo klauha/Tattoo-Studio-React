@@ -19,14 +19,8 @@ export const Register = () => {
     const navigate = useNavigate();
 
     const registerMe = async() => {
-        // console.log(email);
-        // console.log(password);
-        console.log(bodyCredentials.password);
-        console.log(bodyCredentials.email);
-        console.log(bodyCredentials);
-
         const userRegistered = await register(bodyCredentials)
-        console.log(userRegistered);
+       
         if(userRegistered.success) {
             navigate('/login')
         }

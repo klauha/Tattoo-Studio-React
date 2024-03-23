@@ -1,6 +1,7 @@
 
 const apiUrl = "http://localhost:4000"
 
+
 export const register = async (bodyCredentials)=> {
     try {
         const response = await fetch(
