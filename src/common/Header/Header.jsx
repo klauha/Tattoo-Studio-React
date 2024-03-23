@@ -4,7 +4,7 @@ import { CustomLink } from '../CustomLink/CustomLink'
 
 export const Header = () => {
   return (
-    <div className='headerDessign'>
+    <div className='headerDesign'>
         <CustomLink
         title= {"Home"}
         path= {"/"}

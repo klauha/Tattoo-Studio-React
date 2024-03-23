@@ -3,6 +3,6 @@ import "./Login.css"
 
 export const Login = () => {
   return (
-    <div className='loginDessign'>Login</div>
+    <div className='loginDesign'>Login</div>
   )
 }

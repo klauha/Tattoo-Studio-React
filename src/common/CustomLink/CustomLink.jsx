@@ -14,7 +14,7 @@ export const CustomLink = ({title, path, hideIfActive}) => {
     return null;
   }
   return (
-    <div className='linkDessign' onClick={(handleClick)=> navigate(path)}>
+    <div className='linkDesign' onClick={(handleClick)=> navigate(path)}>
       {title}
     </div>
   )

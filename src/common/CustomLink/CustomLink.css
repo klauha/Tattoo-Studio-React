@@ -1,10 +1,10 @@
-.linkDessign {
+.linkDesign {
     font-weight: bold;
     color: lightcyan;
     margin: 1em;
     transition: 0,5s;
 }
-.linkDessign:hover {
+.linkDesign:hover {
     cursor: pointer;
     transition: 0.5s;
     color: black;

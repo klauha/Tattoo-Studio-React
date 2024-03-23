@@ -1,0 +1,8 @@
+.inputDesign {
+    height: 2.5em;
+    width: 18em;
+
+    border: 0.1em solid #080707cb;
+    border-radius: 0.5em;
+    margin: 2em
+}
