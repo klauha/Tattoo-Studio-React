@@ -38,12 +38,14 @@ const inputHandler = (e) => {
 return (
   <div className='loginDesign'>
     <Input
+      className= "inputDesign"
       type="email"
       placeHolder="email"
       name="email"
       onChangeFunction={(e) => inputHandler(e)}
     />
     <Input
+      className= "inputDesign"
       type="password"
       placeHolder="password"
       name="password"

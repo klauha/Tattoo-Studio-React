@@ -44,12 +44,14 @@ export const Register = () => {
     return (
         <div className='registerDesign'>
             <Input
+                className= "inputDesign"
                 type="email"
                 placeHolder="email"
                 name="email"
                 onChangeFunction={(e) => inputHandler(e)}
             />
             <Input
+                className= "inputDesign"
                 type="password"
                 placeHolder="password"
                 name="password"

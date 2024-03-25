@@ -1,10 +1,11 @@
 import React from 'react'
 import "./Input.css"
 
-export const Input = ({ type, placeHolder, name,value, onChangeFunction }) => {
+export const Input = ({className, type, placeHolder, name,value, onChangeFunction }) => {
     return (
         <>
-            <input className='inputDesign'
+            <input 
+                className={className}
                 type={type}
                 placeholder={placeHolder}
                 name={name}
@@ -14,3 +15,4 @@ export const Input = ({ type, placeHolder, name,value, onChangeFunction }) => {
         </>
     )
 }
+{/* <input className='inputDesign inputProfileDessign' */}

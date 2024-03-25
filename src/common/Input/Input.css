@@ -6,3 +6,11 @@
     border-radius: 0.5em;
     margin: 2em
 }
+.inputProfileDesign {
+    height: 2.5em;
+    width: 25em;
+
+    border: 0.1em solid #080707cb;
+    border-radius: 0.5em;
+    margin: 2em
+}

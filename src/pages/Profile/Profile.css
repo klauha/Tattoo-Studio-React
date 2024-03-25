@@ -2,10 +2,26 @@
     height: 92vh;
     width: 100vw;
 
-    background-color: rgba(237, 245, 240, 0.887);
-    
+    background-color: rgba(232, 244, 236, 0.887);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
+    
 }
+.dataUser  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+.profileImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+   
+  }
