@@ -8,9 +8,10 @@
 }
 .inputProfileDesign {
     height: 2.5em;
-    width: 25em;
+    width: 20em;
 
     border: 0.1em solid #080707cb;
     border-radius: 0.5em;
-    margin: 2em
+    margin: 2em;
+    padding: 0.5em
 }
