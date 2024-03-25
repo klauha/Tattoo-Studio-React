@@ -4,8 +4,7 @@ import { Login } from "../Login/Login"
 import { Register } from "../Register/Register"
 import { Artists } from "../Artists/Artists"
 import { PrivateHome } from "../PrivateHome/PrivateHome"
-
-
+import { Profile } from "../Profile/Profile";
 
 export const Body = () => {
     return (
@@ -14,8 +13,8 @@ export const Body = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<PrivateHome />} />
-            <Route path="/artists" element={<Artists />} />
-            
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/artists" element={<Artists />} />            
         </Routes>
     )
 }

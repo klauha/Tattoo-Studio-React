@@ -20,7 +20,9 @@ export const Login = () => {
     console.log(result);
     if(result.success) {
       localStorage.setItem("token",result.token )
-      navigate("/home")
+      // navigate("/home")
+      window.location.href = "/home";
+
     }
   }
 
