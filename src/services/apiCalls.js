@@ -81,11 +81,11 @@ export const editProfile = async (bodyDataToUpdate) => {
 
     }
 }
-export const getMyAppointments = async ()=> {
+export const getMyAppointments = async () => {
     try {
-        const response = await fetch (
+        const response = await fetch(
             `${apiUrl}/api/appointments`,
-            { 
+            {
                 method: "Get",
                 headers: {
                     "Content-Type": "application/json",
@@ -93,14 +93,29 @@ export const getMyAppointments = async ()=> {
                 }
             }
         )
-       
         const data = await response.json()
-
-        console.log(data);
-
-        return data      
+        return data
 
     } catch (error) {
         return error
     }
+}
+export const createAppointments = async () => {
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/appointments`,
+            {
+                method: "Post",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return error
+    }
+
 }
