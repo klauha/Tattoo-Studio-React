@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Profile.css"
 import { Input } from '../../common/Input/input'
-import { getProfile } from '../../services/apiCalls'
+import { editProfile, getProfile } from '../../services/apiCalls'
 
 
 export const Profile = () => {
@@ -25,7 +25,19 @@ export const Profile = () => {
   }
 
 
-  const editProfile = () => {
+  const editProfileUser = () => {
+    try {
+
+      const dataToUpdate = {
+        firstName: userProfileData.first_name,
+        lastName: userProfileData.last_name
+      }
+
+      console.log(dataToUpdate);
+      const updateUserProfile = editProfile(dataToUpdate)
+    } catch (error) {
+      console.log(error);
+    }
     // setHandleInputDisable(!hadleInputDisable)
 
 
@@ -70,7 +82,7 @@ export const Profile = () => {
           disabled={true}
         ></Input>
         <button onClick={editData}> Editar </button>
-        <button onClick={editProfile}> Guardar </button>
+        <button onClick={editProfileUser}> Guardar </button>
       </div>
     </div>
   )

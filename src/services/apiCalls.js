@@ -44,7 +44,7 @@ export const login = async (bodyCredentials) => {
 }
 
 export const getProfile = async () => {
-    try { 
+    try {
         const response = await fetch(
             `${apiUrl}/api/users/profile`,
             {
@@ -63,23 +63,24 @@ export const getProfile = async () => {
     }
 }
 
-export const editProfile = async (bodyDataToUpdate)=> {
+export const editProfile = async (bodyDataToUpdate) => {
     try {
-const response = await fetch (
-    `${apiUrl}/api/users/profile`,
-    {
-        method: "Put",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bodyDataToUpdate),
-    }
-)
+        const response = await fetch(
+            `${apiUrl}/api/users/profile`,
+            {
+                method: "Put",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify(bodyDataToUpdate),
+            }
+        )
 
 
-        
-    } catch (error){
-    return error 
-        
+
+    } catch (error) {
+        return error
+
     }
 }
