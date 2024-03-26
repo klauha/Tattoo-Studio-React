@@ -7,18 +7,38 @@ import { getProfile } from '../../services/apiCalls'
 export const Profile = () => {
 
   const [userProfileData, setUserProfileData] = useState({})
+  const [hadleInputDisable, setHandleInputDisable] = useState(true)
 
 
   useEffect(() => {
-    const getUserProfile = async ()=>{
+    const getUserProfile = async () => {
       const profile = await getProfile()
       setUserProfileData(profile.data)
-      console.log(userProfileData.email);
     }
-
     getUserProfile()
   }, [])
 
+
+  const editData = () => {
+    console.log('edit data');
+    setHandleInputDisable(!hadleInputDisable)
+  }
+
+
+  const editProfile = () => {
+    // setHandleInputDisable(!hadleInputDisable)
+
+
+  }
+  const inputHandler = (e) => {
+    setUserProfileData((prevState) => (
+      {
+        ...prevState,
+        [e.target.name]: e.target.value
+      }
+    ))
+
+  }
 
   return (
     <div className='profileDesign'>
@@ -29,25 +49,28 @@ export const Profile = () => {
         <Input
           className="inputProfileDesign"
           type="text"
-          name="firts_name"
-          value={userProfileData.first_name}
-          disabled={true}
+          name="first_name"
+          value={userProfileData.first_name || ""}
+          disabled={hadleInputDisable}
+          onChangeFunction={inputHandler}
         ></Input>
         <Input
           className="inputProfileDesign"
           type="text"
           name="last_name"
-          value={userProfileData.last_name}
-          disabled={true}
+          value={userProfileData?.last_name ?? ""}
+          disabled={hadleInputDisable}
+          onChangeFunction={(e) => inputHandler(e)}
         ></Input>
         <Input
           className="inputProfileDesign"
           type="text"
           name="email"
-          value={userProfileData.email}
+          value={userProfileData.email || ""}
           disabled={true}
         ></Input>
-
+        <button onClick={editData}> Editar </button>
+        <button onClick={editProfile}> Guardar </button>
       </div>
     </div>
   )
