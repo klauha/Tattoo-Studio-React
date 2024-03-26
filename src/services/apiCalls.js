@@ -76,11 +76,31 @@ export const editProfile = async (bodyDataToUpdate) => {
                 body: JSON.stringify(bodyDataToUpdate),
             }
         )
+    } catch (error) {
+        console.log(error); error
 
+    }
+}
+export const getMyAppointments = async ()=> {
+    try {
+        const response = await fetch (
+            `${apiUrl}/api/appointments`,
+            { 
+                method: "Get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+       
+        const data = await response.json()
 
+        console.log(data);
+
+        return data      
 
     } catch (error) {
         return error
-
     }
 }

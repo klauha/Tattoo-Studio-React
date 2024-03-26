@@ -25,7 +25,7 @@ export const Profile = () => {
   }
 
 
-  const editProfileUser = () => {
+  const editProfileUser = async () => {
     try {
 
       const dataToUpdate = {
@@ -34,14 +34,15 @@ export const Profile = () => {
       }
 
       console.log(dataToUpdate);
-      const updateUserProfile = editProfile(dataToUpdate)
+      const updateUserProfile = await editProfile(dataToUpdate)
     } catch (error) {
-      console.log(error);
+  
+    } finally {
+      setHandleInputDisable(!hadleInputDisable)
     }
-    // setHandleInputDisable(!hadleInputDisable)
-
 
   }
+  
   const inputHandler = (e) => {
     setUserProfileData((prevState) => (
       {
@@ -49,7 +50,6 @@ export const Profile = () => {
         [e.target.name]: e.target.value
       }
     ))
-
   }
 
   return (
