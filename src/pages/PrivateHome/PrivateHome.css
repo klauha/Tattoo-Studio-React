@@ -1,12 +1,12 @@
 .privateHomeDesign {
-    height: 92vh;
-    width: 100vw;
-
-    background-color: rgba(209, 230, 148, 0.887);
-    
+    min-height: 92vh;
+    /* width: 100vw; */
    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.container{
+    
 }

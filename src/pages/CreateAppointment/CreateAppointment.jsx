@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./CreateAppointment.css"
 import { createAppointments, getServices } from '../../services/apiCalls'
 import { Input } from '../../common/Input/input'
+import { useNavigate } from 'react-router-dom'
 
 export const CreateAppointment = () => {
 
@@ -13,19 +14,22 @@ export const CreateAppointment = () => {
   )
   const [services, setServices] = useState([])
 
+  const navigate = useNavigate()
+
 
   const postAppointment = async () => {
-    console.log(bodyDataAppointment);
     const result = await createAppointments(bodyDataAppointment)
+    navigate("/my-appointments")
+
   }
 
   useEffect(() => {
-    const getServicesAppointments = async () => {
+    const fetchServicesAppointments = async () => {
       const services = await getServices()
       console.log(services);
       setServices(services.data)
     }
-    getServicesAppointments()
+    fetchServicesAppointments()
   }, [])
 
 
@@ -36,30 +40,36 @@ export const CreateAppointment = () => {
         [e.target.name]: e.target.value
       }
     ))
+  }
 
+  const inputDateHandler = (e) => {
+    setBodyDataAppointment((prevState) => (
+      {
+        ...prevState,
+        "appointmentDate": e.target.value
+      }
+    ))
   }
 
 
   return (
 
     <div className='createAppoinmentDesign'>
-      <select name="select">
-        <option value="">Selecciona un servicio</option>
+      <div className="formCreateAppointment">
+        <h1>Crear cita</h1>
+      <select className='inputForm' name="serviceId" onChange={inputHandler}>
+        <option value="0">Selecciona un servicio</option>
         <option value="1">Tatuajes</option>
         <option value="2">Restauración de tatuajes</option>
         <option value="3">Tapado de tatto</option>
         <option value="4">Piercings</option>
         <option value="5">Laser Tatoo</option>
       </select>
-      <button onClick={postAppointment}>Enviar</button>
 
-      {/* <Input
-      className= "inputDesign"
-      type="password"
-      placeHolder="password"
-      name="password"
-      onChangeFunction={(e) => inputHandler(e)}
-    />  */}
+      <input className='inputForm' name="appointmentDate" onChange={inputDateHandler} type="date" />
+
+      <button className='inputForm' onClick={postAppointment}>Enviar</button>
+      </div>
     </div>
   )
 }

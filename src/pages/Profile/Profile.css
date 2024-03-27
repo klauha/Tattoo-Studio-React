@@ -1,5 +1,5 @@
 .profileDesign {
-    height: 92vh;
+  min-height: 92vh;
     width: 100vw;
 
     background-color: rgb(255, 255, 255);

@@ -1,5 +1,5 @@
 .homeDesign {
-    height: 92vh;
+    min-height: 92vh;
     width: 100vw;
 
     background-color: rgba(237, 245, 240, 0.887);

@@ -1,12 +1,37 @@
-.createAppoinmentDesign{
-    height: 92vh;
+.createAppoinmentDesign {
+    min-height: 92vh;
     width: 100vw;
 
-    background-color: rgba(112, 69, 104, 0.887);
-    
-   
+    background-color: rgba(244, 236, 236, 0.887);
+
+
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.formCreateAppointment {
+    background-image:url("../../../img/ser-tatuador-xxss.jpg") ;
+    height: 30em;
+    width: 40em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
+    border-radius: 10px;
+}
+
+h1 {
+    font-family: roboto;
+    font-size: 35px;
+    color:rgba(255, 255, 255, 0.887) ;
+    
+
+}
+.inputForm{
+    background-color: none;
+    font-size: 18px;
+    padding: 0.8em;
 }

@@ -1,12 +1,14 @@
 #root {
-  max-width: 1280px;
+  min-width: 100vh;
   margin:0;
   padding:0;
   text-align: center;
+ font-family: 'Poppins', sans-serif;
+ background-color: rgba(244, 236, 236, 0.887)
 
 }
-/* 
-body {
+
+/* body {
   margin: 0;
   
   display: flex;

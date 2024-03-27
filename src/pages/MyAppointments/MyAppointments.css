@@ -1,5 +1,5 @@
 .myAppointmentsDesign {
-    height: 92vh;
+    min-height: 92vh;
     width: 100vw;
 
     background-color: rgba(112, 69, 104, 0.887);
