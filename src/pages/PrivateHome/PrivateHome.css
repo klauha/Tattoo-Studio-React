@@ -1,12 +1,20 @@
 .privateHomeDesign {
     min-height: 92vh;
-    /* width: 100vw; */
+
    
     display: flex;
-    flex-direction: column;
+   
     justify-content: center;
     align-items: center;
 }
 .container{
-    
+    background-image:url("../../../img/ser-tatuador-xxss.jpg") ;
+    height: 30em;
+    width: 55em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
+    border-radius: 10px;
+    margin: 3em;
 }
