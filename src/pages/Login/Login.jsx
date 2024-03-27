@@ -15,46 +15,46 @@ export const Login = () => {
   )
 
   const navigate = useNavigate()
-  const LogMe = async() => {
+  const LogMe = async () => {
     const result = await login(bodyCredentials)
     console.log(result);
-    if(result.success) {
-      localStorage.setItem("token",result.token )
+    if (result.success) {
+      localStorage.setItem("token", result.token)
       // navigate("/home")
       window.location.href = "/home";
 
     }
   }
 
-const inputHandler = (e) => {
-  setBodyCredentials((prevState) => (
-    {
-      ...prevState,
-      [e.target.name]: e.target.value
-    }
-  ))
+  const inputHandler = (e) => {
+    setBodyCredentials((prevState) => (
+      {
+        ...prevState,
+        [e.target.name]: e.target.value
+      }
+    ))
 
-}
-return (
-  <div className='loginDesign'>
-    <Input
-      className= "inputDesign"
-      type="email"
-      placeHolder="email"
-      name="email"
-      onChangeFunction={(e) => inputHandler(e)}
-    />
-    <Input
-      className= "inputDesign"
-      type="password"
-      placeHolder="password"
-      name="password"
-      onChangeFunction={(e) => inputHandler(e)}
-    />
+  }
+  return (
+    <div className='loginDesign'>
+      <Input
+        className="inputDesign"
+        type="email"
+        placeHolder="email"
+        name="email"
+        onChangeFunction={(e) => inputHandler(e)}
+      />
+      <Input
+        className="inputDesign"
+        type="password"
+        placeHolder="password"
+        name="password"
+        onChangeFunction={(e) => inputHandler(e)}
+      />
 
 
-    <button onClick={LogMe}>Login</button>
+      <button onClick={LogMe}>Login</button>
 
-  </div>
-)
+    </div>
+  )
 }

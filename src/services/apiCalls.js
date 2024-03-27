@@ -76,6 +76,10 @@ export const editProfile = async (bodyDataToUpdate) => {
                 body: JSON.stringify(bodyDataToUpdate),
             }
         )
+
+        const data = await response.json()
+
+        return data
     } catch (error) {
         console.log(error); error
 
@@ -100,7 +104,7 @@ export const getMyAppointments = async () => {
         return error
     }
 }
-export const createAppointments = async () => {
+export const createAppointments = async (bodyDataAppointment) => {
     try {
         const response = await fetch(
             `${apiUrl}/api/appointments`,
@@ -109,7 +113,8 @@ export const createAppointments = async () => {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + localStorage.getItem("token")
-                }
+                },
+                body: JSON.stringify(bodyDataAppointment)
             }
         )
         const data = await response.json()
@@ -118,4 +123,22 @@ export const createAppointments = async () => {
         return error
     }
 
+}
+export const getServices = async () => {
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/services`,
+            {
+                method: "Get",
+                headers: {
+                    "Content-Type": "application/json",
+
+                }
+            }
+        )
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return error
+    }
 }
