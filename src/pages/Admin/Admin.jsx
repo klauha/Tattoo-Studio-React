@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Admin.css"
-import { getUsers } from '../../services/apiCalls'
+import { deleteUserbyAdmin, getUsers } from '../../services/apiCalls'
 import DataTable from 'react-data-table-component'
+import { useNavigate } from 'react-router-dom'
 
 export const Admin = () => {
   const [usersData, setUsersData] = useState([{}])
@@ -42,12 +43,14 @@ export const Admin = () => {
   }
   const deleteUser= async ()=> {
     try {
-      const userToDelete ={
-        
-      }
+      const userToDelteSelected =usersSelected[0].id
+      const userToDelete =await deleteUserbyAdmin(userToDelteSelected)
 
+      const updateTableUsers = await getUsers()
+
+      setUsersData(updateTableUsers.data)
     } catch (error) {
-      return error
+      console.log(error);
     }
    
   }
@@ -69,7 +72,7 @@ export const Admin = () => {
           paginationPerPage={5}
           fixedHeader
         />
-        <button>Eliminar usuario</button>
+        <button onClick={deleteUser}>Eliminar usuario</button>
       </div>
 
       {/* <button onClick={deleteUser}>Eliminar usuario</button> */}
