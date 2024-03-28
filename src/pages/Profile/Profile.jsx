@@ -35,15 +35,15 @@ export const Profile = () => {
 
       console.log(dataToUpdate);
       const updateUserProfile = await editProfile(dataToUpdate)
-      
+
     } catch (error) {
-  
+
     } finally {
       setHandleInputDisable(!hadleInputDisable)
     }
 
   }
-  
+
   const inputHandler = (e) => {
     setUserProfileData((prevState) => (
       {

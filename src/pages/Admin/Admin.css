@@ -4,10 +4,19 @@
     width: 100vw;
 
     background-color: rgba(112, 69, 104, 0.887);
-    
-   
     display: flex;
     flex-direction: column ;
     justify-content: center;
     align-items: center;
+   
+}
+.tableUser{
+    width: 60em;
+    height: auto;
+   
+}
+.table {
+
+box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
+
 }

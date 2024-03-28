@@ -1,42 +1,68 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Admin.css"
 import { getUsers } from '../../services/apiCalls'
 import DataTable from 'react-data-table-component'
 
 export const Admin = () => {
+  const [usersData, setUsersData] = useState([{}])
+  const [usersSelected, setUsersSelected] = useState([])
   const columns = [
-    // {
-    //   name: "Nombre",
-    //   selector: row =>row.user.first_name
-    // },
-    // // {
-    // //   name: "Nombre",
-    // //   selector: row =>row.user.first_name
-    // // },
-    // // {
-    // //   name: "Nombre",
-    // //   selector: row =>row.user.first_name
-    // // }
-
-
+    {
+      name: "Nombre",
+      selector: row => row.first_name
+    },
+    {
+      name: "Apellidos",
+      selector: row => row.last_name
+    },
+    {
+      name: "email",
+      selector: row => row.email
+    },
+    {
+      name: "Fecha de creación",
+      selector: row => {
+        const date = new Date(row.createdAt)
+        return date.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
+      }
+    }
   ]
-  const [user, setUser] = useState([{}])
   useEffect(() => {
     const getUserByAdmin = async () => {
-      const Users = await getUsers()
-      setUser()
+      const users = await getUsers()
+      console.log(users.data);
+      setUsersData(users.data)
     }
     getUserByAdmin()
   }, [])
 
+  const handleRowChange = ({ selectedRows }) => {
+    console.log(selectedRows);
+    setUsersSelected(selectedRows)
+  }
+  const deleteUser= 
+
   return (
     <div className='adminDesign'>
 
-      <DataTable
-        title="Usuarios"
-        columns={columns}
-        data={users}
-      />
+      <div className="tableUser">
+        <DataTable
+          className='table'
+          title="Usuarios"
+          columns={columns}
+          data={usersData}
+          // onSelectedRowsChange={dataSelected => setUsersSelected(dataSelected.selectedRows)}
+          onSelectedRowsChange={handleRowChange}
+          selectableRows
+          selectableRowsSingle
+          pagination
+          paginationPerPage={5}
+          fixedHeader
+        />
+        <button>Eliminar usuario</button>
+      </div>
+
+      {/* <button onClick={deleteUser}>Eliminar usuario</button> */}
     </div>
   )
 }
