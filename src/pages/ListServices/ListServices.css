@@ -1,9 +1,6 @@
 .listServices {
     min-height: 92vh;
-
-   
-    display: flex;
-   
+    display: flex; 
     justify-content: center;
     align-items: center;
 }

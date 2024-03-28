@@ -1,7 +1,19 @@
 import React from 'react'
 
-export const Cards = () => {
+export const Cards = ({services}) => {
   return (
-    <div>Cards</div>
+    <div className='serviceCard'>
+      {
+        services.map( service => (
+          <div>
+            <h2>{service.serviceName}</h2>
+            <p> {service.description}</p>
+            {/* <div>{service.}</div> */}
+          </div>
+        ))
+      }
+    </div>
+
+    
   )
 }

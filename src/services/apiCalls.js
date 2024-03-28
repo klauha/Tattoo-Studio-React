@@ -142,3 +142,22 @@ export const getServices = async () => {
         return error
     }
 }
+export const getUsers = async () => {
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/users/`,
+            {
+                method: "Get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error
+    }
+}
