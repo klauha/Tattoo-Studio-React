@@ -155,8 +155,27 @@ export const getUsers = async () => {
             }
         )
         const data = await response.json()
-
         return data
+    } catch (error) {
+        return error
+    }
+}
+
+export const deleteUserbyAdmin = async (id)=> {
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/users/${id}`,
+            {
+                method: "Delete",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+        const data = await response.json()
+        return data
+
     } catch (error) {
         return error
     }

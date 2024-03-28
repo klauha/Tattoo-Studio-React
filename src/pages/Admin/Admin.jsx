@@ -40,7 +40,17 @@ export const Admin = () => {
     console.log(selectedRows);
     setUsersSelected(selectedRows)
   }
-  const deleteUser= 
+  const deleteUser= async ()=> {
+    try {
+      const userToDelete ={
+        
+      }
+
+    } catch (error) {
+      return error
+    }
+   
+  }
 
   return (
     <div className='adminDesign'>
