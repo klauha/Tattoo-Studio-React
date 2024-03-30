@@ -8,7 +8,7 @@ export const Cards = ({services}) => {
           <div>
             <h2>{service.serviceName}</h2>
             <p> {service.description}</p>
-            {/* <div>{service.}</div> */}
+            <div>{service.urlImg}</div>
           </div>
         ))
       }
