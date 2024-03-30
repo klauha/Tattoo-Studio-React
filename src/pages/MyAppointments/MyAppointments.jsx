@@ -1,16 +1,18 @@
-import { getMyAppointments } from "../../services/apiCalls"
+import { deleteAppoinmentById, getMyAppointments } from "../../services/apiCalls"
 import "./MyAppointments.css"
 import DataTable from "react-data-table-component"
-
-
 import React, { useEffect, useState } from 'react'
 
+
+
 export const MyAppointments = () => {
+  const [userAppointments, setUserAppointments] = useState([{}])
+  const [appointmentSelected, setAppoinmentSelected] = useState([])
   const columns = [
     {
       name: "Número de cita",
-      selector: (row,index) => index+1,
-      
+      selector: (row, index) => index + 1,
+
     },
     {
       name: "Servicio contratado",
@@ -25,13 +27,12 @@ export const MyAppointments = () => {
       }
     }
   ]
-  const [userAppointments, setUserAppointments] = useState([{}])
+
 
   useEffect(() => {
     const getUserAppointments = async () => {
       const MyAppointments = await getMyAppointments()
-      console.table(MyAppointments.data)
-      console.table(MyAppointments.data[0].service);
+      
       setUserAppointments(
         MyAppointments.data
       )
@@ -39,22 +40,44 @@ export const MyAppointments = () => {
     getUserAppointments()
   }, [])
 
+  const handleRowChange = ({ selectedRows }) => {
+    console.log(selectedRows);
+    setAppoinmentSelected(selectedRows)
+  }
 
+  const deleteAppointment = async ()=>{
+    try {
+      console.log('delete');
+      const appointmentToDeleteSelected = appointmentSelected[0].id
+      console.log(appointmentToDeleteSelected);
+      const appointmentToDelete= await deleteAppoinmentById(appointmentToDeleteSelected)
+      const updateTableAppoinments = await getMyAppointments()
+
+    } catch (error) {
+      console.log();
+    }
+
+  }
 
 
 
   return (
     <div className="myAppointmentsDesign">
-
-      <DataTable
-      title="Mis citas"
-        columns={columns}
-        data={userAppointments}
-        selectableRows
-        onSelectedRowsChange={data =>console.log(data)}
-        log
-      />
-
+      <div className="tableAppointments">
+        <DataTable
+          className="table"
+          title="Mis citas"
+          columns={columns}
+          data={userAppointments}
+          onSelectedRowsChange={handleRowChange}
+          selectableRows
+          selectableRowsSingle
+          pagination
+          paginationPerPage={5}
+          fixedHeader
+        />
+        <button onClick={deleteAppointment}>Eliminar cita</button>
+      </div>
 
     </div>
   )

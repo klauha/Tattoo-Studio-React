@@ -180,3 +180,22 @@ export const deleteUserbyAdmin = async (id)=> {
         return error
     }
 }
+export const deleteAppoinmentById= async (id)=>{
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/appointments/${id}`,
+            {
+                method: "Delete",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+        const data = await response.json()
+        return data
+
+    } catch (error) {
+        return error
+    }
+}

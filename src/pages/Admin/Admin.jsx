@@ -43,8 +43,8 @@ export const Admin = () => {
   }
   const deleteUser= async ()=> {
     try {
-      const userToDelteSelected =usersSelected[0].id
-      const userToDelete =await deleteUserbyAdmin(userToDelteSelected)
+      const userToDeleteSelected =usersSelected[0].id
+      const userToDelete =await deleteUserbyAdmin(userToDeleteSelected)
 
       const updateTableUsers = await getUsers()
 
@@ -64,7 +64,6 @@ export const Admin = () => {
           title="Usuarios"
           columns={columns}
           data={usersData}
-          // onSelectedRowsChange={dataSelected => setUsersSelected(dataSelected.selectedRows)}
           onSelectedRowsChange={handleRowChange}
           selectableRows
           selectableRowsSingle

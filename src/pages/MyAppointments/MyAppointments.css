@@ -10,3 +10,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.tableAppointments{
+    width: 60em;
+    height: auto;
+   
+}
+.table {
+
+box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
+
+}
