@@ -63,12 +63,12 @@ export const MyAppointments = () => {
 
   const deleteAppointment = async () => {
     try {
-      console.log('delete');
+     
       const appointmentToDeleteSelected = appointmentSelected[0].id
       console.log(appointmentToDeleteSelected);
       const appointmentToDelete = await deleteAppoinmentById(appointmentToDeleteSelected)
       const updateTableAppoinments = await getMyAppointments()
-
+      setUserAppointments(updateTableAppoinments.data)
     } catch (error) {
       console.log();
     }

@@ -3,6 +3,7 @@ import "./Profile.css"
 import { Input } from '../../common/Input/input'
 import { editProfile, getProfile } from '../../services/apiCalls'
 import { Header } from '../../common/Header/Header'
+import { Button } from '../../common/Button/Button'
 
 
 export const Profile = () => {
@@ -85,8 +86,19 @@ export const Profile = () => {
           value={userProfileData.email || ""}
           disabled={true}
         ></Input>
-        <button onClick={editData}> Editar </button>
-        <button onClick={editProfileUser}> Guardar </button>
+        <div className="buttons">
+          <Button
+         title={"Editar"}
+        className="ButtonDesign"
+        onClick={editData}
+        />
+         <Button
+         title={"Actualizar"}
+        className="ButtonDesign"
+        onClick={editProfileUser}
+        />
+        </div>
+      
       </div>
     </div>
     </>
