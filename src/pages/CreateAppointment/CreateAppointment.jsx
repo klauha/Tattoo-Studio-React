@@ -4,6 +4,7 @@ import { createAppointments, getServices } from '../../services/apiCalls'
 import { Input } from '../../common/Input/input'
 import { useNavigate } from 'react-router-dom'
 import { Header } from '../../common/Header/Header'
+import { Button } from '../../common/Button/Button'
 
 export const CreateAppointment = () => {
 
@@ -55,28 +56,37 @@ export const CreateAppointment = () => {
 
   return (
     <>
-    <Header />
-    <div className='createAppoinmentDesign'>
-    
-      <div className="formCreateAppointment">
-        <h1>Crear cita</h1>
-      <select className='inputForm' name="serviceId" onChange={inputHandler}>
-        <option value="0">Selecciona un servicio</option>
-        <option value="1">Tatuajes</option>
-        <option value="2">Restauración de tatuajes</option>
-        <option value="3">Tapado de tatto</option>
-        <option value="4">Piercings</option>
-        <option value="5">Laser Tatoo</option>
-      </select>
+      <Header />
+      <div className='createAppoinmentDesign'>
 
-      <input className='inputForm' name="appointmentDate" onChange={inputDateHandler} type="date" />
+        <div className="formCreateAppointment">
+          <h1>Crear cita</h1>
+          <select className='inputForm' name="serviceId" onChange={inputHandler}>
+            <option value="0">Selecciona un servicio</option>
+            <option value="1">Tatuajes</option>
+            <option value="2">Restauración de tatuajes</option>
+            <option value="3">Tapado de tatto</option>
+            <option value="4">Piercings</option>
+            <option value="5">Laser Tatoo</option>
+          </select>
 
-      <button className='inputForm' onClick={postAppointment}>Enviar</button>
-        
+          <Input
+            className='inputForm'
+            name="appointmentDate"
+            onChange={inputDateHandler}
+            type="date"
+          />
+
+          <Button
+            title={"Crear cita"}
+            className="ButtonDesign"
+            onClick={postAppointment}
+          />
+
+        </div>
+
+        <div className="imgCreateAppointment">  </div>
       </div>
-
-      <div className="imgCreateAppointment">  </div>
-    </div>
     </>
   )
 }
