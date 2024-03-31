@@ -1,6 +1,6 @@
 import { deleteAppoinmentById, getMyAppointments } from "../../services/apiCalls"
 import "./MyAppointments.css"
-import DataTable from "react-data-table-component"
+import DataTable, {createTheme} from "react-data-table-component"
 import React, { useEffect, useState } from 'react'
 import { Header } from "../../common/Header/Header"
 
@@ -9,6 +9,20 @@ import { Header } from "../../common/Header/Header"
 export const MyAppointments = () => {
   const [userAppointments, setUserAppointments] = useState([{}])
   const [appointmentSelected, setAppoinmentSelected] = useState([])
+
+  createTheme(
+    'klauha',
+    {
+      background: {
+        default: 'transparent',
+      },
+      text: {
+        primary: 'black',
+      },
+    },
+    'dark',
+  );
+
   const columns = [
     {
       name: "Número de cita",
@@ -65,10 +79,10 @@ export const MyAppointments = () => {
     <>
     <Header />
     <div className="myAppointmentsDesign">
-      <div className="imgMyappointment"></div>
       <div className="tableAppointments">
         <div className="tableAppo">
           <DataTable
+            theme="klauha"
             className="Myappintmentstable"
             title="Mis citas"
             columns={columns}
@@ -83,6 +97,7 @@ export const MyAppointments = () => {
         </div>
         <button onClick={deleteAppointment}>Eliminar cita</button>
       </div>
+      <div className="imgMyappointment"></div>
     </div>
   </>
 )

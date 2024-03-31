@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Profile.css"
 import { Input } from '../../common/Input/input'
 import { editProfile, getProfile } from '../../services/apiCalls'
+import { Header } from '../../common/Header/Header'
 
 
 export const Profile = () => {
@@ -54,6 +55,8 @@ export const Profile = () => {
   }
 
   return (
+    <>
+    <Header />
     <div className='profileDesign'>
       <div className='dataUser'>
         <div className='profileImg'>
@@ -86,5 +89,6 @@ export const Profile = () => {
         <button onClick={editProfileUser}> Guardar </button>
       </div>
     </div>
+    </>
   )
 }

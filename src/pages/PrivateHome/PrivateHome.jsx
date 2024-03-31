@@ -1,6 +1,7 @@
 import React from 'react'
 import "./PrivateHome.css"
 import { useNavigate } from 'react-router-dom'
+import { Header } from '../../common/Header/Header'
 
 export const PrivateHome = () => {
   const navigate = useNavigate()
@@ -13,14 +14,16 @@ export const PrivateHome = () => {
   }
 
   return (
-    <div className='privateHomeDesign'>
-      <div className="imgHome">
+    <>
+      <Header />
+      <div className='privateHomeDesign'>
+        <div className="imgHome">
+        </div>
+        <div className="optionsHome">
+          <h1 className='createAppointment' onClick={redirectToCreateAppointments}>Crear citas</h1>
+          <h1 className='myAppointments' onClick={redirectToMyAppointments}>Mis citas</h1>
+        </div>
       </div>
-      <div className="optionsHome">
-        <h1 className='createAppointment' onClick={redirectToCreateAppointments}>Crear citas</h1>
-        <h1 className='myAppointments' onClick={redirectToMyAppointments}>Mis citas</h1>
-      </div>
-
-    </div>
+    </>
   )
 }

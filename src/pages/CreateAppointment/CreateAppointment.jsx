@@ -3,6 +3,7 @@ import "./CreateAppointment.css"
 import { createAppointments, getServices } from '../../services/apiCalls'
 import { Input } from '../../common/Input/input'
 import { useNavigate } from 'react-router-dom'
+import { Header } from '../../common/Header/Header'
 
 export const CreateAppointment = () => {
 
@@ -53,10 +54,10 @@ export const CreateAppointment = () => {
 
 
   return (
-
+    <>
+    <Header />
     <div className='createAppoinmentDesign'>
-      <div className="imgCreateAppointment">
-        
+      <div className="imgCreateAppointment">  
       </div>
       <div className="formCreateAppointment">
         <h1>Crear cita</h1>
@@ -74,5 +75,6 @@ export const CreateAppointment = () => {
       <button className='inputForm' onClick={postAppointment}>Enviar</button>
       </div>
     </div>
+    </>
   )
 }
