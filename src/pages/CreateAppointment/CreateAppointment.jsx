@@ -57,8 +57,7 @@ export const CreateAppointment = () => {
     <>
     <Header />
     <div className='createAppoinmentDesign'>
-      <div className="imgCreateAppointment">  
-      </div>
+    
       <div className="formCreateAppointment">
         <h1>Crear cita</h1>
       <select className='inputForm' name="serviceId" onChange={inputHandler}>
@@ -73,7 +72,10 @@ export const CreateAppointment = () => {
       <input className='inputForm' name="appointmentDate" onChange={inputDateHandler} type="date" />
 
       <button className='inputForm' onClick={postAppointment}>Enviar</button>
+        
       </div>
+
+      <div className="imgCreateAppointment">  </div>
     </div>
     </>
   )
