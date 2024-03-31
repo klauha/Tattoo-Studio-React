@@ -1,6 +1,6 @@
 .linkDesign {
     font-weight: bold;
-    color: lightcyan;
+    color: rgba(237, 245, 240, 0.887);
     margin: 1em;
     transition: 0,5s;
 }
@@ -8,5 +8,5 @@
 .linkDesign:hover {
     cursor: pointer;
     transition: 0.5s;
-    color: black;
+    color:  lightcyan;
 }

@@ -63,9 +63,11 @@ export const MyAppointments = () => {
 
   return (
     <div className="myAppointmentsDesign">
+      <div className="imgMyappointment"></div>
       <div className="tableAppointments">
+        <div className="table">
         <DataTable
-          className="table"
+          className="Myappintmentstable"
           title="Mis citas"
           columns={columns}
           data={userAppointments}
@@ -75,7 +77,9 @@ export const MyAppointments = () => {
           pagination
           paginationPerPage={5}
           fixedHeader
+       
         />
+        </div>
         <button onClick={deleteAppointment}>Eliminar cita</button>
       </div>
 

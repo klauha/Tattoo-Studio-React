@@ -8,14 +8,19 @@ export const PrivateHome = () => {
   const redirectToCreateAppointments = () => {
     navigate('/create-appointment')
   }
+  const redirectToMyAppointments = () => {
+    navigate('/my-appointments')
+  }
 
   return (
     <div className='privateHomeDesign'>
-      <div className="containerHome"></div>
-      <div className="options">
-        <div className='createAppointment' onClick={redirectToCreateAppointments}>Crear citas</div>
-        <div className='myAppointments'>Mis citas</div>
+      <div className="imgHome">
       </div>
+      <div className="optionsHome">
+        <h1 className='createAppointment' onClick={redirectToCreateAppointments}>Crear citas</h1>
+        <h1 className='myAppointments' onClick={redirectToMyAppointments}>Mis citas</h1>
+      </div>
+
     </div>
   )
 }

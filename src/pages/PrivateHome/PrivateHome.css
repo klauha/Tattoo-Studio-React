@@ -1,20 +1,31 @@
 .privateHomeDesign {
     min-height: 92vh;
-
-   
+    width: 100vw;
+    background-color: rgba(244, 236, 236, 0.887);
     display: flex;
-   
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 2em;
 }
-.containerHome{
-    background-image:url("../../../img/ser-tatuador-xxss.jpg") ;
-    height: 30em;
-    width: 55em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+
+.imgHome{
+    background-image:url("../../../img/logo-2018.jpg") ;
+    background-size: cover;
+    height: 40em;
+    width: 40em;
     box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
     border-radius: 10px;
-    margin: 3em;
+}
+.optionsHome{
+    height: 40em;
+    width: 40em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
+    border-radius: 10px;
+    gap: 2em;
 }

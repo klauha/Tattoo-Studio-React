@@ -6,6 +6,7 @@
     border-radius: 0.5em;
     margin: 2em
 }
+
 .inputProfileDesign {
     height: 2.5em;
     width: 20em;
@@ -14,4 +15,13 @@
     border-radius: 0.5em;
     margin: 2em;
     padding: 0.5em
+}
+
+.inputForm{
+    background: transparent;
+    font-size: 18px;
+    font-family: poppins;
+    padding: 0.8em;
+   
+
 }

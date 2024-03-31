@@ -33,7 +33,7 @@ export const Header = () => {
             title={"Profile"}
             path={"/profile"}
           />
-          <div class="header-logout" onClick={handleLogout}>
+          <div className="header-logout" onClick={handleLogout}>
             Log Out
           </div>
         </div>

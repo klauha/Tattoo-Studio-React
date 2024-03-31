@@ -55,6 +55,9 @@ export const CreateAppointment = () => {
   return (
 
     <div className='createAppoinmentDesign'>
+      <div className="imgCreateAppointment">
+        
+      </div>
       <div className="formCreateAppointment">
         <h1>Crear cita</h1>
       <select className='inputForm' name="serviceId" onChange={inputHandler}>
