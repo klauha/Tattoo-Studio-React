@@ -47,13 +47,15 @@ export const Register = () => {
         <Header />
         <div className='registerDesign'>
             <div className="formRegister">
+                <h3> Crea tu cuenta</h3>
             <Input
-                className= "inputDesign"
+                className= "inputDesign input-design"
                 type="email"
                 placeHolder="email"
                 name="email"
                 onChangeFunction={(e) => inputHandler(e)}
             />
+            
             <Input
                 className= "inputDesign"
                 type="password"

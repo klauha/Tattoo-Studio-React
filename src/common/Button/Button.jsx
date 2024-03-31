@@ -2,14 +2,11 @@ import "./Button.css"
 
 import React from 'react'
 
-export const Button = ({className,title, functionEmit }) => {
+export const Button = ({ className, title, onClick }) => {
     return (
-        <div
-            // className={className}
-            onclick={functionEmit}
-            title={title}
-        >
 
+        <div className={className} onClick={onClick}>
+            {title}
         </div>
     )
 }

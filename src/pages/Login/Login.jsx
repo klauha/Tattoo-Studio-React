@@ -6,6 +6,7 @@ import { login } from '../../services/apiCalls'
 import { useNavigate } from 'react-router-dom'
 import { decodeToken } from 'react-jwt'
 import { Header } from '../../common/Header/Header'
+import { Button } from '../../common/Button/Button'
 
 export const Login = () => {
 
@@ -55,6 +56,7 @@ export const Login = () => {
 
       <div className='loginDesign'>
         <div className="formLogin">
+        <h3> Inicia sesión</h3>
         <Input
           className="inputDesign"
           type="email"
@@ -70,7 +72,12 @@ export const Login = () => {
           onChangeFunction={(e) => inputHandler(e)}
         />
 
-        <button onClick={LogMe}>Login</button>
+        <Button 
+         title={"Entrar"}
+        className="ButtonDesign"
+        onClick={LogMe}
+       
+        />
         </div>
       </div>
     </>

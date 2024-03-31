@@ -3,6 +3,7 @@ import "./MyAppointments.css"
 import DataTable, {createTheme} from "react-data-table-component"
 import React, { useEffect, useState } from 'react'
 import { Header } from "../../common/Header/Header"
+import { Button } from "../../common/Button/Button"
 
 
 
@@ -95,7 +96,13 @@ export const MyAppointments = () => {
             fixedHeader
           />
         </div>
-        <button onClick={deleteAppointment}>Eliminar cita</button>
+        <div className="btn-container">
+        <Button
+         title={"Eliminar cita"}
+        className="ButtonDesign"
+        onClick={deleteAppointment}
+        />
+        </div>
       </div>
       <div className="imgMyappointment"></div>
     </div>

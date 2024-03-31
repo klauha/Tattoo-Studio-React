@@ -1,24 +1,25 @@
-/* 
+
 .ButtonDesign {
-
-    height: 3em;
-    width: 18em;
-
+    height: 2.5em;
+    width: 10em;
+    padding: 5px;
+    margin: 2em;
     border-radius: 0.5em;
-
-    background-color: red;
-    color: white;
+    color:rgb(208, 213, 188);
     font-weight: bold;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1em;
+    background-color:rgb(127, 60, 61) ;
+    font-size: 15px;
+    font-family: poppins;
+    opacity: 0.8;
 }
 
 .ButtonDesign:hover {
 
     cursor: pointer;
     transition: 0.2s;
-    background-color: darkred;
-} */
+    opacity: 1;
+     
+}
