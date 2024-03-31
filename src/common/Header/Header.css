@@ -1,11 +1,23 @@
 .headerDesign {
+    box-sizing: border-box;
     height: 8vh;
-    width: 100vw; 
+
+    padding: 15px;
 
     background-color: #080707cb;
 
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 
+}
+
+.header-logout {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.header-logout:hover {
+    cursor: pointer;
 }

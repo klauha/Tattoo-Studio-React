@@ -1,6 +1,8 @@
-.listServices {
-    min-height: 92vh;
-    display: flex; 
+.container-services {
+    margin-top: 2em;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px
 }

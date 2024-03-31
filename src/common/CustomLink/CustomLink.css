@@ -4,6 +4,7 @@
     margin: 1em;
     transition: 0,5s;
 }
+
 .linkDesign:hover {
     cursor: pointer;
     transition: 0.5s;

@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .formCreateAppointment {
@@ -21,6 +22,8 @@
     justify-content: center;
     box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
     border-radius: 10px;
+    gap: 2em;
+
 }
 
 h1 {

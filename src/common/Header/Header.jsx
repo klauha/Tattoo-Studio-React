@@ -22,12 +22,20 @@ export const Header = () => {
       {
         token ? (<div className='headerDesign'>
           <CustomLink
+            title={"Home"}
+            path={"/home"}
+          />
+          <CustomLink
+            title={"Services"}
+            path={"/services"}
+          />
+          <CustomLink
             title={"Profile"}
             path={"/profile"}
           />
-          <button onClick={handleLogout}>
+          <div class="header-logout" onClick={handleLogout}>
             Log Out
-          </button>
+          </div>
         </div>
 
         ) : (

@@ -1,18 +1,18 @@
-
-
-
-
-
-
-
-.servicesCard{
-    background-color: brown;
-    height: 30em;
-    width: 40em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 6px rgba(51, 64, 63, 0.8);
+.card {
+    width: 400px;
+    height: 650px;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 2px solid black;
     border-radius: 10px;
+    background-color: white;
+}
+
+.card > h1 {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.card > img {
+    width: 350px;
 }
