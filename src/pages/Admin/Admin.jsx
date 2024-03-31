@@ -3,6 +3,7 @@ import "./Admin.css"
 import { deleteUserbyAdmin, getUsers } from '../../services/apiCalls'
 import DataTable from 'react-data-table-component'
 import { useNavigate } from 'react-router-dom'
+import { Header } from "../../common/Header/Header";
 
 export const Admin = () => {
   const [usersData, setUsersData] = useState([{}])
@@ -41,10 +42,10 @@ export const Admin = () => {
     console.log(selectedRows);
     setUsersSelected(selectedRows)
   }
-  const deleteUser= async ()=> {
+  const deleteUser = async () => {
     try {
-      const userToDeleteSelected =usersSelected[0].id
-      const userToDelete =await deleteUserbyAdmin(userToDeleteSelected)
+      const userToDeleteSelected = usersSelected[0].id
+      const userToDelete = await deleteUserbyAdmin(userToDeleteSelected)
 
       const updateTableUsers = await getUsers()
 
@@ -52,29 +53,32 @@ export const Admin = () => {
     } catch (error) {
       console.log(error);
     }
-   
+
   }
 
   return (
-    <div className='adminDesign'>
+    <>
+    <Header />
+      <div className='adminDesign'>
 
-      <div className="tableUser">
-        <DataTable
-          className='table'
-          title="Usuarios"
-          columns={columns}
-          data={usersData}
-          onSelectedRowsChange={handleRowChange}
-          selectableRows
-          selectableRowsSingle
-          pagination
-          paginationPerPage={5}
-          fixedHeader
-        />
-        <button onClick={deleteUser}>Eliminar usuario</button>
+        <div className="tableUser">
+          <DataTable
+            className='table'
+            title="Usuarios"
+            columns={columns}
+            data={usersData}
+            onSelectedRowsChange={handleRowChange}
+            selectableRows
+            selectableRowsSingle
+            pagination
+            paginationPerPage={5}
+            fixedHeader
+          />
+          <button onClick={deleteUser}>Eliminar usuario</button>
+        </div>
+
+        {/* <button onClick={deleteUser}>Eliminar usuario</button> */}
       </div>
-
-      {/* <button onClick={deleteUser}>Eliminar usuario</button> */}
-    </div>
+    </>
   )
 }

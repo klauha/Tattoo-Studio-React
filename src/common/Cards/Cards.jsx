@@ -6,8 +6,8 @@ export const Cards = ({ service }) => {
     <>
       <div className='card'>
         <h1>{service.serviceName}</h1>
-        <p> {service.description}</p>
         <img src={service.urlImg} alt={service.serviceName} />
+        <p> {service.description}</p>
       </div>
     </>
 

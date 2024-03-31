@@ -1,8 +1,11 @@
+
 .container-services {
-    margin-top: 2em;
+   padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px
+    gap: 15px;
+    background-image: url("../../../img/logo-2018.jpg");
+   
 }

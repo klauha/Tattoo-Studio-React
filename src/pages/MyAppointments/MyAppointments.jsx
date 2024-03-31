@@ -2,6 +2,7 @@ import { deleteAppoinmentById, getMyAppointments } from "../../services/apiCalls
 import "./MyAppointments.css"
 import DataTable from "react-data-table-component"
 import React, { useEffect, useState } from 'react'
+import { Header } from "../../common/Header/Header"
 
 
 
@@ -32,7 +33,7 @@ export const MyAppointments = () => {
   useEffect(() => {
     const getUserAppointments = async () => {
       const MyAppointments = await getMyAppointments()
-      
+
       setUserAppointments(
         MyAppointments.data
       )
@@ -45,12 +46,12 @@ export const MyAppointments = () => {
     setAppoinmentSelected(selectedRows)
   }
 
-  const deleteAppointment = async ()=>{
+  const deleteAppointment = async () => {
     try {
       console.log('delete');
       const appointmentToDeleteSelected = appointmentSelected[0].id
       console.log(appointmentToDeleteSelected);
-      const appointmentToDelete= await deleteAppoinmentById(appointmentToDeleteSelected)
+      const appointmentToDelete = await deleteAppoinmentById(appointmentToDeleteSelected)
       const updateTableAppoinments = await getMyAppointments()
 
     } catch (error) {
@@ -62,27 +63,29 @@ export const MyAppointments = () => {
 
 
   return (
+    
+    <>
+    <Header />
     <div className="myAppointmentsDesign">
       <div className="imgMyappointment"></div>
       <div className="tableAppointments">
-        <div className="table">
-        <DataTable
-          className="Myappintmentstable"
-          title="Mis citas"
-          columns={columns}
-          data={userAppointments}
-          onSelectedRowsChange={handleRowChange}
-          selectableRows
-          selectableRowsSingle
-          pagination
-          paginationPerPage={5}
-          fixedHeader
-       
-        />
+        <div className="tableAppo">
+          <DataTable
+            className="Myappintmentstable"
+            title="Mis citas"
+            columns={columns}
+            data={userAppointments}
+            onSelectedRowsChange={handleRowChange}
+            selectableRows
+            selectableRowsSingle
+            pagination
+            paginationPerPage={5}
+            fixedHeader
+          />
         </div>
         <button onClick={deleteAppointment}>Eliminar cita</button>
       </div>
-
     </div>
-  )
-}
+  </>
+)
+  }
