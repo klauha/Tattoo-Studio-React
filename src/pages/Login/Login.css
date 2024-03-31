@@ -1,10 +1,9 @@
 .loginDesign {
     min-height: 92vh;
     width: 100vw;
-
-    background-color: rgba(69, 112, 83, 0.887);
-    
-   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../img/logo-2018.jpg");
+    /* background-repeat: no-repeat;
+    background-size: cover; */
     display: flex;
     flex-direction: column ;
     justify-content: center;

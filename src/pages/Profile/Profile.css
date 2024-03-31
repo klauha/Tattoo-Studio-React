@@ -1,7 +1,7 @@
 .profileDesign {
   min-height: 92vh;
   width: 100vw;
-  background-color: rgba(244, 236, 236, 0.887);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../img/logo-2018.jpg");
   display: flex;
   flex-direction: row;
   justify-content: center;

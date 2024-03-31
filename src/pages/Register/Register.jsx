@@ -4,6 +4,7 @@ import { Input } from '../../common/Input/input'
 import './Register.css'
 import { useNavigate } from "react-router-dom";
 import { register } from '../../services/apiCalls';
+import { Header } from '../../common/Header/Header';
 
 export const Register = () => {
     // const [email, setEmail] = useState("")
@@ -42,6 +43,8 @@ export const Register = () => {
         ))
     }
     return (
+        <>
+        <Header />
         <div className='registerDesign'>
             <Input
                 className= "inputDesign"
@@ -61,5 +64,6 @@ export const Register = () => {
 
             <button onClick={registerMe}>Registrar</button>
         </div>
+        </>
     )
 }
