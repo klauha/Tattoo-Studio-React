@@ -9,10 +9,13 @@ export const Header = () => {
   const navigate = useNavigate()
 
   const [token, setToken] = useState(localStorage.getItem('token'))
+  const [role, setRole] = useState(localStorage.getItem('role'))
 
   const handleLogout = () => {
     // Eliminamos el token del localStorage y actualizamos el estado local
     localStorage.removeItem("token")
+    localStorage.removeItem("name")
+    localStorage.removeItem("role")
     setToken(null)
     navigate("/login")
   }
@@ -21,6 +24,9 @@ export const Header = () => {
     <>
       {
         token ? (<div className='headerDesign'>
+          <div className="header-logout">
+            { (role != "user") ? role : ""}
+          </div>
           <CustomLink
             title={"Home"}
             path={"/home"}

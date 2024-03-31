@@ -4,6 +4,7 @@ import { Input } from '../../common/Input/input'
 import "./Login.css"
 import { login } from '../../services/apiCalls'
 import { useNavigate } from 'react-router-dom'
+import { decodeToken } from 'react-jwt'
 
 export const Login = () => {
 
@@ -15,11 +16,17 @@ export const Login = () => {
   )
 
   const navigate = useNavigate()
+
   const LogMe = async () => {
-    const result = await login(bodyCredentials)
-    console.log(result);
-    if (result.success) {
-      localStorage.setItem("token", result.token)
+    const responseApiLogin = await login(bodyCredentials)
+
+    const decoded= decodeToken(responseApiLogin.token)
+
+    console.log(responseApiLogin);
+    if (responseApiLogin.success) {
+      localStorage.setItem("token", responseApiLogin.token)
+      localStorage.setItem('name', decoded.username)
+      localStorage.setItem('role', decoded.roleName)
       // navigate("/home")
       window.location.href = "/home";
 
