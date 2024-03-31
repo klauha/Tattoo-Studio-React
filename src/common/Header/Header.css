@@ -1,11 +1,8 @@
 .headerDesign {
     box-sizing: border-box;
     height: 8vh;
-
     padding: 15px;
-
     background-color: rgb(19, 24, 25);
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -14,7 +11,7 @@
 
 .header-logout {
     font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     color: white;
 }
 
