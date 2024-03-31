@@ -1,9 +1,12 @@
 .inputDesign {
     height: 2.5em;
     width: 18em;
+    padding: 5px;
 
-    border: 0.1em solid #080707cb;
-    border-radius: 0.5em;
+
+    border: none;
+    outline: none;
+ 
     margin: 2em
 }
 
@@ -24,4 +27,8 @@
     padding: 0.8em;
    
 
+}
+
+.inputDesign:focus {
+    border-bottom: 1px solid #000; /* Cambia #000 al color que desees */
 }

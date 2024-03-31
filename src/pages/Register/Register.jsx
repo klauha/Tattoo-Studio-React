@@ -46,6 +46,7 @@ export const Register = () => {
         <>
         <Header />
         <div className='registerDesign'>
+            <div className="formRegister">
             <Input
                 className= "inputDesign"
                 type="email"
@@ -63,6 +64,7 @@ export const Register = () => {
 
 
             <button onClick={registerMe}>Registrar</button>
+            </div>
         </div>
         </>
     )

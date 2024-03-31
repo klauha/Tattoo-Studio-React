@@ -1,5 +1,6 @@
 .linkDesign {
     font-weight: bold;
+    font-size: 20px;
     color: rgba(237, 245, 240, 0.887);
     margin: 1em;
     transition: 0,5s;

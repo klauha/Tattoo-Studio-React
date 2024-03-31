@@ -52,8 +52,9 @@ export const Login = () => {
   return (
     <>
       <Header />
-      
+
       <div className='loginDesign'>
+        <div className="formLogin">
         <Input
           className="inputDesign"
           type="email"
@@ -70,7 +71,7 @@ export const Login = () => {
         />
 
         <button onClick={LogMe}>Login</button>
-
+        </div>
       </div>
     </>
 
