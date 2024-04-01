@@ -47,6 +47,10 @@ export const Header = () => {
         ) : (
           <div className='headerDesign'>
             <CustomLink
+            title={"Home"}
+            path={"/"}
+          />
+            <CustomLink
               title={"Services"}
               path={"/services"}
             />
