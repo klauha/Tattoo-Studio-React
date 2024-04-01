@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./CreateAppointment.css"
 import { createAppointments, getServices } from '../../services/apiCalls'
-import { Input } from '../../common/Input/input'
 import { useNavigate } from 'react-router-dom'
 import { Header } from '../../common/Header/Header'
 import { Button } from '../../common/Button/Button'
@@ -11,7 +10,7 @@ export const CreateAppointment = () => {
   const [bodyDataAppointment, setBodyDataAppointment] = useState(
     {
       serviceId: 3,
-      appointmentDate: "2024-03-05"
+      appointmentDate: ""
     }
   )
   const [services, setServices] = useState([])
@@ -22,7 +21,6 @@ export const CreateAppointment = () => {
   const postAppointment = async () => {
     const result = await createAppointments(bodyDataAppointment)
     navigate("/my-appointments")
-
   }
 
   useEffect(() => {
@@ -44,16 +42,6 @@ export const CreateAppointment = () => {
     ))
   }
 
-  const inputDateHandler = (e) => {
-    setBodyDataAppointment((prevState) => (
-      {
-        ...prevState,
-        "appointmentDate": e.target.value
-      }
-    ))
-  }
-
-
   return (
     <>
       <Header />
@@ -70,11 +58,11 @@ export const CreateAppointment = () => {
             <option value="5">Laser Tatoo</option>
           </select>
 
-          <Input
+          <input
             className='inputForm'
             name="appointmentDate"
-            onChange={inputDateHandler}
-            type="date"
+            onChange={inputHandler}
+            type="datetime-local"
           />
 
           <Button

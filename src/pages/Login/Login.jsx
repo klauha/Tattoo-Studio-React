@@ -76,11 +76,9 @@ export const Login = () => {
          title={"Entrar"}
         className="ButtonDesign"
         onClick={LogMe}
-       
         />
         </div>
       </div>
     </>
-
   )
 }
