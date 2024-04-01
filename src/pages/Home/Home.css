@@ -1,12 +1,15 @@
 .homeDesign {
-    min-height: 92vh;
+    max-height: 92vh;
     width: 100vw;
-    background-color: rgb(41, 49, 52)
-    ;
+    background-color: rgb(41, 49, 52);
 
 }
-.containerImg{
+
+.containerImg {
     width: 50em;
-    height: 50em;
-    background-image: url("../../../img/logo-2018.jpg")
+    height: 92vh;
+}
+
+.img-logo {
+    max-height: 92vh;
 }
