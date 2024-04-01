@@ -4,6 +4,7 @@ import { Input } from '../../common/Input/input'
 import { editProfile, getProfile } from '../../services/apiCalls'
 import { Header } from '../../common/Header/Header'
 import { Button } from '../../common/Button/Button'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Profile = () => {
@@ -11,6 +12,17 @@ export const Profile = () => {
   const [userProfileData, setUserProfileData] = useState({})
   const [hadleInputDisable, setHandleInputDisable] = useState(true)
 
+  const [token, setToken] = useState(localStorage.getItem('token'))
+
+  const navigate = useNavigate()
+
+
+  useEffect(() => {
+    if (!token) {
+      navigate('/login')
+    }
+  }, [token])
+  
 
   useEffect(() => {
     const getUserProfile = async () => {

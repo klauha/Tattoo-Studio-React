@@ -31,7 +31,9 @@
 }
 .createAppointment:hover, .myAppointments:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
+
 h1{
     font-weight: normal;
 }

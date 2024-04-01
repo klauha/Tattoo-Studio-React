@@ -22,7 +22,7 @@ export const ListServices = () => {
     return (
         <>
             <Header />
-            <div className="listServices">
+            <div className="list-services">
                 <div className="container-services">
                     {
                         services.map(service => (
