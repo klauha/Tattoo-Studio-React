@@ -44,7 +44,7 @@ export const Profile = () => {
         lastName: userProfileData.last_name
       }
 // Llamamos a la función para editar el perfil utilizando la API
-      console.log(dataToUpdate);
+ 
       const updateUserProfile = await editProfile(dataToUpdate)
 
     } catch (error) {

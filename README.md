@@ -3,9 +3,12 @@
 # Proyecto de Frontend
 
 ![Texto alternativo](./img/logo-2018.jpg)
-![Texto alternativo](./img/home-copy.png)
 ![Texto alternativo](./img/services.png)
-![Texto alternativo](./img/crear-cita.png)
+![Texto alternativo](./img/login.png)
+![Texto alternativo](./img/home-copy.png)
+![Texto alternativo](./img/crear-citas.png)
+![Texto alternativo](./img/mis-citas.png)
+![Texto alternativo](./img/profile.png)
 ![Texto alternativo](./img/super-admin-view.png)
 
 
