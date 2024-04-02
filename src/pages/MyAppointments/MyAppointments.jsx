@@ -22,18 +22,16 @@ export const MyAppointments = () => {
       },
     },
     'dark',
-  );
+  )
 
   const columns = [
     {
       name: "Número de cita",
       selector: (row, index) => index + 1,
-
     },
     {
       name: "Servicio contratado",
       selector: row => row.service?.serviceName
-
     },
     {
       name: "Fecha",
@@ -44,7 +42,7 @@ export const MyAppointments = () => {
     }
   ]
 
-
+ // Efecto para obtener las citas del usuario cuando el componente se monta
   useEffect(() => {
     const getUserAppointments = async () => {
       const MyAppointments = await getMyAppointments()
@@ -55,17 +53,15 @@ export const MyAppointments = () => {
     }
     getUserAppointments()
   }, [])
-
+// Función para manejar cambios en las filas seleccionadas
   const handleRowChange = ({ selectedRows }) => {
     console.log(selectedRows);
     setAppoinmentSelected(selectedRows)
   }
-
+// Función para eliminar una cita seleccionada
   const deleteAppointment = async () => {
     try {
-     
       const appointmentToDeleteSelected = appointmentSelected[0].id
-      console.log(appointmentToDeleteSelected);
       const appointmentToDelete = await deleteAppoinmentById(appointmentToDeleteSelected)
       const updateTableAppoinments = await getMyAppointments()
       setUserAppointments(updateTableAppoinments.data)

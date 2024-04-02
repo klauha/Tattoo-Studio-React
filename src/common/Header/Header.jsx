@@ -26,10 +26,12 @@ export const Header = () => {
         token ? (<div className='headerDesign'>
           <div className="header-logout">
             { (role != "user") ? role : ""}
+            {/* path={"/admin/users"} */}
+            
           </div>
           <CustomLink
             title={"Home"}
-            path={"/home"}
+            path={"/"}
           />
           <CustomLink
             title={"Services"}

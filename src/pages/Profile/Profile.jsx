@@ -11,9 +11,7 @@ export const Profile = () => {
 
   const [userProfileData, setUserProfileData] = useState({})
   const [hadleInputDisable, setHandleInputDisable] = useState(true)
-
   const [token, setToken] = useState(localStorage.getItem('token'))
-
   const navigate = useNavigate()
 
 
@@ -23,7 +21,7 @@ export const Profile = () => {
     }
   }, [token])
   
-
+// Efecto para obtener los datos del perfil del usuario cuando el componente se monta
   useEffect(() => {
     const getUserProfile = async () => {
       const profile = await getProfile()
@@ -32,13 +30,12 @@ export const Profile = () => {
     getUserProfile()
   }, [])
 
-
+// Función para habilitar/deshabilitar la edición de datos
   const editData = () => {
-    console.log('edit data');
     setHandleInputDisable(!hadleInputDisable)
   }
 
-
+// Función para editar el perfil de usuario
   const editProfileUser = async () => {
     try {
 
@@ -46,18 +43,18 @@ export const Profile = () => {
         firstName: userProfileData.first_name,
         lastName: userProfileData.last_name
       }
-
+// Llamamos a la función para editar el perfil utilizando la API
       console.log(dataToUpdate);
       const updateUserProfile = await editProfile(dataToUpdate)
 
     } catch (error) {
 
+      // / Cambiar el estado para habilitar/deshabilitar la edición después de actualizar
     } finally {
       setHandleInputDisable(!hadleInputDisable)
     }
-
   }
-
+  // Función para manejar cambios en los inputs
   const inputHandler = (e) => {
     setUserProfileData((prevState) => (
       {

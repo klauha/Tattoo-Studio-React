@@ -18,21 +18,23 @@ export const Login = () => {
   )
 
   const navigate = useNavigate()
-
   const LogMe = async () => {
+        // Llamar a la función de inicio de sesión proporcionando las credenciales
     const responseApiLogin = await login(bodyCredentials)
 
     const decoded = decodeToken(responseApiLogin.token)
 
     console.log(decoded);
+    // Si el inicio de sesión es exitoso y el usuario tiene rol user
 
     if (responseApiLogin.success && decoded.roleName === "user") {
       localStorage.setItem("token", responseApiLogin.token)
       localStorage.setItem('name', decoded.username)
       localStorage.setItem('role', decoded.roleName)
-      // navigate("/home")
-      window.location.href = "/home";
+      navigate("/home")
+      // window.location.href = "/home";
     } else {
+      // Si el inicio de sesión es exitoso y el usuario es admin o superadmin
       localStorage.setItem("token", responseApiLogin.token)
       localStorage.setItem('name', decoded.username)
       localStorage.setItem('role', decoded.roleName)

@@ -8,6 +8,7 @@ import { Header } from "../../common/Header/Header";
 export const Admin = () => {
   const [usersData, setUsersData] = useState([{}])
   const [usersSelected, setUsersSelected] = useState([])
+
   const columns = [
     {
       name: "Nombre",
@@ -29,19 +30,23 @@ export const Admin = () => {
       }
     }
   ]
+
+  // Efecto para obtener los datos de los usuarios cuando el componente se monta
   useEffect(() => {
     const getUserByAdmin = async () => {
       const users = await getUsers()
-      console.log(users.data);
+     
       setUsersData(users.data)
     }
     getUserByAdmin()
   }, [])
 
+
   const handleRowChange = ({ selectedRows }) => {
-    console.log(selectedRows);
     setUsersSelected(selectedRows)
   }
+
+  
   const deleteUser = async () => {
     try {
       const userToDeleteSelected = usersSelected[0].id
@@ -76,8 +81,6 @@ export const Admin = () => {
           />
           <button onClick={deleteUser}>Eliminar usuario</button>
         </div>
-
-        {/* <button onClick={deleteUser}>Eliminar usuario</button> */}
       </div>
     </>
   )

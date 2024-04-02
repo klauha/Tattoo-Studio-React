@@ -23,10 +23,12 @@ export const CreateAppointment = () => {
     navigate("/my-appointments")
   }
 
+  // Efecto para obtener los servicios disponibles cuando el componente se monta
   useEffect(() => {
     const fetchServicesAppointments = async () => {
+ // Obtener los servicios disponibles desde la API
       const services = await getServices()
-      console.log(services);
+ // Actualizar el estado de los servicios
       setServices(services.data)
     }
     fetchServicesAppointments()
